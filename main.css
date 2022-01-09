@@ -9,6 +9,10 @@ header {
     justify-content: space-between;
    align-items: center;
    padding: 20px;
+   position: sticky;
+   background-color: #fff;
+   top: 0;
+   z-index: 1;
   }
 
   .header__logo {
@@ -45,6 +49,18 @@ header {
   .about__sun—image {
     width: 100px;
     height: 100px;
+    animation: rotation 10s linear infinite;
+    position: absolute;
+  }
+
+@keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   .about {
@@ -156,10 +172,7 @@ header {
   button:hover {
     background-color: #f6980c;
     box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
-  }
-
-  .ease-in {
-    transition: margin-right 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
   }
 
   footer {
@@ -200,3 +213,92 @@ header {
     text-align: center;
     opacity: 0.5;
   }
+
+  @media (max-width: 320px) {
+    header {
+      padding: 10px;
+    }
+
+    .header__logo {
+      height: 20px;
+    }
+
+    header a {
+      margin-right: 10px;
+    }
+    .about {
+      flex-direction: column-reverse;
+      padding: 10px;
+    }
+
+    .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    .about__image {
+      width: 280px;
+    }
+
+    .about__sun—image {
+      width: 75px;
+      height: 75px;
+    }
+    .form {
+      padding: 10px;
+    }
+
+    .form h1 {
+      font-size: 36px;
+    }
+
+    footer {
+      padding: 10px;
+    }
+
+    .footer_container {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 720px) {
+    header {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .about {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    .about__image {
+      width: 280px;
+    }
+    
+    .about__sun—image {
+      height: 75px;
+      width: 75px;
+    }
+
+    .form {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .footer_container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  
